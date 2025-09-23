@@ -1,46 +1,42 @@
 import styled from "styled-components";
-import { Icon } from "../../../../components";
+import { Icon, Button } from "../../../../components";
 import { Link, useNavigate } from "react-router-dom";
-
-const RightAligned = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  gap: ${({ $gap }) => $gap};
-`;
-
-const StyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  width: 100px;
-  height: 32px;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #626262ff;
-  border-radius: 8px;
-  &:hover {
-    background-color: #ce3c3cff;
-  }
-`;
-
-const StyledButton = styled.div`
-  cursor: pointer;
-`;
+import { ROLE } from "../../../../constants";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectUserLogin,
+  selectUserRole,
+  selectUserSession,
+} from "../../../../selectors";
+import { logout } from "../../../../actions";
 
 const ControlPanelContainer = ({ className }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const roleId = useSelector(selectUserRole);
+  const login = useSelector(selectUserLogin);
+  const session = useSelector(selectUserSession);
+
   return (
     <div className={className}>
       <RightAligned $gap="8px">
-        <StyledLink to="/login">Войти</StyledLink>
+        {roleId === ROLE.GUEST ? (
+          <Button>
+            <Link to="/login">Войти</Link>
+          </Button>
+        ) : (
+          <>
+            <UserName>{login}</UserName>
+            <StyledIcon onClick={() => dispatch(logout(session))}>
+              <Icon id="fa-sign-out" size="20px" />
+            </StyledIcon>
+          </>
+        )}
       </RightAligned>
       <RightAligned $gap="20px">
-        <StyledButton onClick={() => navigate(-1)}>
+        <StyledIcon onClick={() => navigate(-1)}>
           <Icon id="fa-backward" size="20px" />
-        </StyledButton>
+        </StyledIcon>
 
         <Link to="/post">
           <Icon id="fa-file-text-o" size="20px" />
@@ -52,6 +48,23 @@ const ControlPanelContainer = ({ className }) => {
     </div>
   );
 };
+
+const RightAligned = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: ${({ $gap }) => $gap};
+  align-items: center;
+`;
+
+const UserName = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 0px;
+`;
+
+const StyledIcon = styled.div`
+  cursor: pointer;
+`;
 
 export const ControlPanel = styled(ControlPanelContainer)`
   display: flex;
