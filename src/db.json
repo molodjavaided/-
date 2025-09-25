@@ -6,23 +6,30 @@
       "password": "qwerty_123",
       "registed_at": "2050-09-22",
       "role_id": 0
+    },
+    {
+      "id": "b20e",
+      "login": "test",
+      "password": "qwerty123",
+      "registed_at": "2034-08-23 21:34",
+      "role_id": 2
     }
   ],
   "roles": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Администратор"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Модератор"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Читатель"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Гость"
     }
   ],
