@@ -27,17 +27,16 @@ const ControlPanelContainer = ({ className }) => {
         ) : (
           <>
             <UserName>{login}</UserName>
-            <StyledIcon onClick={() => dispatch(logout(session))}>
-              <Icon id="fa-sign-out" size="20px" />
-            </StyledIcon>
+            <Icon
+              id="fa-sign-out"
+              size="20px"
+              onClick={() => dispatch(logout(session))}
+            />
           </>
         )}
       </RightAligned>
       <RightAligned $gap="20px">
-        <StyledIcon onClick={() => navigate(-1)}>
-          <Icon id="fa-backward" size="20px" />
-        </StyledIcon>
-
+        <Icon id="fa-backward" size="20px" onClick={() => navigate(-1)} />
         <Link to="/post">
           <Icon id="fa-file-text-o" size="20px" />
         </Link>
@@ -60,10 +59,6 @@ const UserName = styled.div`
   font-size: 18px;
   font-weight: bold;
   padding: 6px 0px;
-`;
-
-const StyledIcon = styled.div`
-  cursor: pointer;
 `;
 
 export const ControlPanel = styled(ControlPanelContainer)`
