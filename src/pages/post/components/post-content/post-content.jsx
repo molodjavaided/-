@@ -3,7 +3,7 @@ import { H2, Icon } from "../../../../components";
 
 const PostContentContainer = ({
   className,
-  post: { id, title, imageUrl, content, publishedAt },
+  post: { title, imageUrl, content, publishedAt },
 }) => {
   return (
     <div className={className}>

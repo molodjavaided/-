@@ -37,6 +37,7 @@ const CommentsContainer = ({ className, comments, postId }) => {
         {comments.map(({ id, author, content, publishedAt }) => (
           <Comment
             key={id}
+            postId={postId}
             id={id}
             author={author}
             content={content}
@@ -59,6 +60,7 @@ export const Comments = styled(CommentsContainer)`
     width: 100%;
 
     & textarea {
+      padding: 10px;
       resize: none;
       width: 100%;
       height: 120px;
