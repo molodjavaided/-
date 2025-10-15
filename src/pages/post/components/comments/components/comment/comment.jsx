@@ -19,21 +19,6 @@ const CommentContainer = ({
   const dispatch = useDispatch();
   const requestServer = useServerRequest();
 
-  // const onCommentRemove = (id) => {
-  //   console.log(id, CLOSE_MODAL, postId, requestServer);
-
-  //   dispatch(
-  //     openModal({
-  //       text: "Удалить комментарий?",
-  //       onConfirm: () => {
-  //         dispatch(removeCommentAsync(requestServer, postId, id));
-  //         dispatch(CLOSE_MODAL);
-  //       },
-  //       onCancel: () => dispatch(CLOSE_MODAL),
-  //     })
-  //   );
-  // };
-
   const onCommentRemove = (id) => {
     dispatch(
       openModal({
@@ -52,11 +37,11 @@ const CommentContainer = ({
       <div className="comment">
         <div className="information-panel">
           <div className="author">
-            <Icon id="fa-user-circle-o" onClick={() => {}} />
+            <Icon id="fa-user-circle-o" inactive={true} />
             {author}
           </div>
           <div className="published-at">
-            <Icon id="fa-calendar-o" onClick={() => {}} />
+            <Icon id="fa-calendar-o" inactive={true} />
             {publishedAt}
           </div>
         </div>
