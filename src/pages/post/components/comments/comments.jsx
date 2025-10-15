@@ -14,7 +14,8 @@ const CommentsContainer = ({ className, comments, postId }) => {
   const requestServer = useServerRequest();
 
   const onNewCommentAdd = (userId, postId, content) => {
-    dispatch(addCommentAsync(requestServer, postId, userId, content));
+    dispatch(addCommentAsync(requestServer, userId, postId, content));
+
     setNewComment("");
   };
 

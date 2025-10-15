@@ -12,4 +12,4 @@ export const addCommentApi = (userId, postId,content) =>
             published_at: generateDate(),
             content,
         })
-    });
+    })
