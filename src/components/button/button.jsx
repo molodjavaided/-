@@ -21,6 +21,8 @@ export const Button = styled(ButtonContainer)`
   background-color: #626262ff;
   border-radius: 8px;
   &:hover {
-    background-color: #ce3c3cff;
+    background-color: ${({ disabled }) =>
+      disabled ? "rgba(0, 0, 0, 0.5)" : "#ce3c3cff"};
+    cursor: ${({ disabled }) => (disabled ? "default" : "ponter")};
   }
 `;
