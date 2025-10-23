@@ -9,6 +9,7 @@ import {
   selectUserSession,
 } from "../../../../selectors";
 import { logout } from "../../../../actions";
+import { checkAccess } from "../../../../utils";
 
 const ControlPanelContainer = ({ className }) => {
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ const ControlPanelContainer = ({ className }) => {
     sessionStorage.removeItem("userData");
     navigate("/");
   };
+
+  const isAdmin = checkAccess([ROLE.ADMIN], roleId);
 
   return (
     <div className={className}>
@@ -39,12 +42,17 @@ const ControlPanelContainer = ({ className }) => {
       </RightAligned>
       <RightAligned $gap="20px">
         <Icon id="fa-backward" size="20px" onClick={() => navigate(-1)} />
-        <Link to="/post">
-          <Icon id="fa-file-text-o" size="20px" />
-        </Link>
-        <Link to="/users">
-          <Icon id="fa-users" size="20px" />
-        </Link>
+
+        {isAdmin && (
+          <>
+            <Link to="/post">
+              <Icon id="fa-file-text-o" size="20px" />
+            </Link>
+            <Link to="/users">
+              <Icon id="fa-users" size="20px" />
+            </Link>
+          </>
+        )}
       </RightAligned>
     </div>
   );

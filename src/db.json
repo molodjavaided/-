@@ -12,7 +12,7 @@
       "login": "test",
       "password": "qwe123",
       "registed_at": "2060-07-16 23:26",
-      "role_id": 2
+      "role_id": 1
     },
     {
       "id": "4852",
@@ -135,18 +135,25 @@
       "content": "2"
     },
     {
-      "id": "d752",
       "author_id": "001",
       "post_id": "e585",
-      "published_at": "2053-06-24 05:42",
-      "content": "3"
+      "published_at": "2057-12-09 14:43",
+      "content": "dv\n",
+      "id": "TUBoP67"
     },
     {
-      "id": "5c89",
       "author_id": "001",
       "post_id": "e585",
-      "published_at": "2048-01-28 13:03",
-      "content": "fsf"
+      "published_at": "2053-10-20 18:50",
+      "content": "dv",
+      "id": "yhloV_f"
+    },
+    {
+      "author_id": "001",
+      "post_id": "e585",
+      "published_at": "2059-02-17 15:02",
+      "content": "dv\n",
+      "id": "57oMGuu"
     }
   ],
   "sessions": [
@@ -193,17 +200,6 @@
         "registeredAt": "2050-09-22",
         "roleId": 0
       }
-    },
-    {
-      "hash": "0.37025555577622271119508923220564611256122589111328",
-      "user": {
-        "id": "001",
-        "login": "anton12",
-        "password": "qwerty_123",
-        "registeredAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": "0ZHGMDO"
     }
   ]
 }
