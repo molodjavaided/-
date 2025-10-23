@@ -193,6 +193,17 @@
         "registeredAt": "2050-09-22",
         "roleId": 0
       }
+    },
+    {
+      "hash": "0.37025555577622271119508923220564611256122589111328",
+      "user": {
+        "id": "001",
+        "login": "anton12",
+        "password": "qwerty_123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": "0ZHGMDO"
     }
   ]
 }
