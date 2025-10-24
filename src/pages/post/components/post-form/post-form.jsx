@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { savePostAsync } from "../../../../actions";
 import { useNavigate } from "react-router-dom";
 import { useServerRequest } from "../../../../hooks";
+import { PROP_TYPE } from "../../../../constants";
 
 const PostFormContainer = ({
   className,
@@ -48,13 +49,13 @@ const PostFormContainer = ({
     <div className={className}>
       <Input
         value={imageUrlValue}
-        defaultValue={imageUrl}
+        // defaultValue={imageUrl}
         placeholder="Изображение..."
         onChange={onImageChange}
       />
       <Input
         value={titleValue}
-        defaultValue={title}
+        // defaultValue={title}
         placeholder="Заголовок..."
         onChange={onTitleChange}
       />
@@ -94,3 +95,7 @@ export const PostForm = styled(PostFormContainer)`
     white-space: pre-line;
   }
 `;
+
+PostForm.propTypes = {
+  post: PROP_TYPE.POST.isRequired,
+};

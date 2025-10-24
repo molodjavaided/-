@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styled from "styled-components";
 // import { forwardRef } from "react"; В React 19 forwardRef больше не нужен
 
@@ -10,3 +11,7 @@ export const Input = styled(InputContainer)`
   padding: 10px;
   border-radius: 10px;
 `;
+
+Input.propTypes = {
+  width: PropTypes.string,
+};

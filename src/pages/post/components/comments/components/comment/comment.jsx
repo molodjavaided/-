@@ -9,6 +9,7 @@ import {
 import { useServerRequest } from "../../../../../../hooks";
 import { ROLE } from "../../../../../../constants";
 import { selectUserRole } from "../../../../../../selectors";
+import PropTypes from "prop-types";
 
 const CommentContainer = ({
   className,
@@ -89,3 +90,11 @@ export const Comment = styled(CommentContainer)`
     padding: 5px;
   }
 `;
+
+Comment.propTypes = {
+  id: PropTypes.number.isRequired,
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  publishedAt: PropTypes.string.isRequired,
+  postId: PropTypes.string.isRequired,
+};

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const TableRowContainer = ({ className, children }) => {
   return <div className={className}>{children}</div>;
@@ -27,3 +28,7 @@ export const TableRow = styled(TableRowContainer)`
     gap: 10px;
   }
 `;
+
+TableRow.propTypes = {
+  children: PropTypes.node.isRequired,
+};
