@@ -1,5 +1,0 @@
-export * from './generate-date'
-export * from './get-comments-count'
-export * from './get-last-page-from-links'
-export * from './debounce'
-export * from './get-comments-with-author'
